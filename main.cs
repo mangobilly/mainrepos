@@ -20,3 +20,11 @@
         return product;
     }
 //yes
+ unsafe public static void SaveBitmap(int[] data, int width, int height, string filename)
+    {
+        fixed (int* pData = data)
+        {
+            using var image = Image.WrapMemory<Bgra32>(pData, width, height);
+            image.SaveAsPng(filename);
+        }
+    }
