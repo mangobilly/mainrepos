@@ -19,3 +19,4 @@
         for (int i = 0; i < n; i++) product *= a;
         return product;
     }
+//yes
